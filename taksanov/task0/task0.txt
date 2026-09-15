@@ -1,0 +1,1 @@
+Task 0: Connected to ccfit and Solaris. Environment configured.
