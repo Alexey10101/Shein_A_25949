@@ -1,3 +1,4 @@
+rm -f Makefile.txt
 cat << 'EOF' > Makefile
 CC = gcc
 CFLAGS = -O2
