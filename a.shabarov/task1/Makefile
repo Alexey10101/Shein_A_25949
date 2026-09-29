@@ -1,4 +1,3 @@
-cat << 'EOF' > Makefile
 CC = gcc
 CFLAGS = -O2
 TARGET = options
@@ -13,4 +12,3 @@ clean:
 	rm -f $(TARGET)
 
 .PHONY: all clean
-EOF
