@@ -9,7 +9,6 @@ cat << 'EOF' > options.c
 
 extern char **environ;
 
-// Структура для сохранения опций
 typedef struct {
     char opt;
     char *arg;
@@ -22,20 +21,17 @@ int opt_count = 0;
 int main(int argc, char *argv[]) {
     int c;
     
-    // 1. Читаем опции слева направо и сохраняем в массив
     while ((c = getopt(argc, argv, "ispuU:cC:dvV:")) != -1) {
         if (c == '?') {
-            continue; // getopt сам выведет ошибку
+            continue;
         }
         if (opt_count < MAX_OPTS) {
             records[opt_count].opt = c;
-            // Если есть аргумент, дублируем его строку
             records[opt_count].arg = optarg ? strdup(optarg) : NULL;
             opt_count++;
         }
     }
     
-    // 2. Выполняем опции справа налево (в обратном порядке)
     for (int i = opt_count - 1; i >= 0; i--) {
         char current_opt = records[i].opt;
         char *current_arg = records[i].arg;
