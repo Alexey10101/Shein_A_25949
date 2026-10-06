@@ -24,4 +24,4 @@ int main(void) {
            tzname[sp->tm_isdst]); // PST или PDT
 
     return 0;
-}
+}z
